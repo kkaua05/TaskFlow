@@ -109,10 +109,21 @@ body {
   .glass {
     border-radius: 12px;
   }
+  
+  .sidebar-overlay {
+    display: block !important;
+  }
 }
 
 @media (max-width: 640px) {
   .glass {
     border-radius: 8px;
   }
+}
+
+/* Garantir que imagens na sidebar carreguem corretamente */
+.sidebar-logo {
+  background: linear-gradient(135deg, #4F46E5, #8B5CF6);
+  border-radius: 20px;
+  padding: 12px;
 }
