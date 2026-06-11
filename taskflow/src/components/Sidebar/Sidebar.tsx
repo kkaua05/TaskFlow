@@ -4,10 +4,11 @@ import {
   FaCheckCircle, 
   FaChartLine, 
   FaCalendarAlt, 
+  FaStickyNote,
   FaCog
 } from 'react-icons/fa';
 
-export type PageType = 'dashboard' | 'completed' | 'analytics' | 'calendar' | 'settings';
+export type PageType = 'dashboard' | 'completed' | 'analytics' | 'calendar' | 'notes' | 'settings';
 
 interface SidebarProps {
   currentPage: PageType;
@@ -29,6 +30,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange, isO
     { id: 'completed', label: 'Concluídas', icon: <FaCheckCircle size={20} />, description: 'Tarefas finalizadas' },
     { id: 'analytics', label: 'Analytics', icon: <FaChartLine size={20} />, description: 'Métricas e relatórios' },
     { id: 'calendar', label: 'Calendário', icon: <FaCalendarAlt size={20} />, description: 'Visualização mensal' },
+    { id: 'notes', label: 'Notes', icon: <FaStickyNote size={20} />, description: 'Notas e documentos' },
     { id: 'settings', label: 'Configurações', icon: <FaCog size={20} />, description: 'Preferências do sistema' },
   ];
 
@@ -94,15 +96,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange, isO
               padding: '12px'
             }}
           >
-           <img 
-            src="/logotask.png" 
-            alt="TaskFlow Logo"
-            style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain'
-    // filter removido para manter cores originais
-        }}
+            <img 
+              src="/logotask.png" 
+              alt="TaskFlow Logo"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                filter: 'brightness(0) invert(1)'
+              }}
             />
           </motion.div>
           
