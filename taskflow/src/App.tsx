@@ -8,8 +8,10 @@ import { Dashboard } from './pages/Dashboard';
 import { CompletedTasks } from './pages/CompletedTasks';
 import { Analytics } from './pages/Analytics';
 import { Calendar } from './pages/Calendar';
+import { Notes } from './pages/Notes';
 import { Settings } from './pages/Settings';
 import './styles/global.css';
+
 
 function AppContent() {
   const [currentPage, setCurrentPage] = useState<PageType>('dashboard');
@@ -25,6 +27,8 @@ function AppContent() {
         return <Analytics />;
       case 'calendar':
         return <Calendar />;
+      case 'notes':
+        return <Notes />;
       case 'settings':
         return <Settings />;
       default:
