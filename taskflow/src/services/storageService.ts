@@ -10,6 +10,7 @@ export class StorageService {
     return tasks ? JSON.parse(tasks) : [];
   }
 
+
   static saveGoals(goals: Goal): void {
     localStorage.setItem('goals', JSON.stringify(goals));
   }
