@@ -1,0 +1,8 @@
+backend
+node_modules
+.git
+.gitignore
+README.md
+screenshots
+.eslintrc*
+tsconfig*.json
