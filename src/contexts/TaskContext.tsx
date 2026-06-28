@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - TaskContext (Context API)
+ * =============================================================================
+ *
+ * Arquivo: src/contexts/TaskContext.tsx
+ * Descrição: Contexto global para gerenciamento de tarefas. Fornece estado
+ *            compartilhado de tasks e funções (CRUD) para toda a aplicação:
+ *            addTask, updateTask, deleteTask, duplicateTask, completeTask,
+ *            moveTask. Comunica com o backend via taskApi (services/api.ts).
+ *            Exibe notificações toast nas operações.
+ *
+ * Hook de acesso: useTasks()
+ *
+ * Tecnologias: React Context API, react-hot-toast, API REST
+ * =============================================================================
+ */
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { Task } from '../types';
 import { taskApi } from '../services/api';

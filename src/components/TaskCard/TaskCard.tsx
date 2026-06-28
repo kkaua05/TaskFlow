@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - TaskCard Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/TaskCard/TaskCard.tsx
+ * Descrição: Card individual de tarefa que exibe título, descrição, prioridade
+ *            (com cor), categoria, status de atraso e data de vencimento.
+ *            Inclui botões de ação: Concluir, Editar, Duplicar e Excluir.
+ *            Usa animações Framer Motion para hover e entrada.
+ *
+ * Props: task, onEdit, onDelete, onDuplicate, onComplete
+ * Dependências: PRIORITIES, CATEGORIES (de src/types)
+ *
+ * Tecnologias: React, Framer Motion, react-icons, date-fns
+ * =============================================================================
+ */
 import { motion } from 'framer-motion';
 import { FaEdit, FaTrash, FaCopy, FaCheck, FaClock } from 'react-icons/fa';
 import type { Task } from '../../types';

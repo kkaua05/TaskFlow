@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - NoteModal Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/Notes/NoteModal.tsx
+ * Descrição: Modal para criação e edição de notas com editor completo:
+ *            título, conteúdo, seletor de cores (8 opções) e tags.
+ *            Bloqueia scroll do body quando aberto. Valida se há título
+ *            ou conteúdo antes de salvar. Exibe preview do conteúdo.
+ *
+ * Props: isOpen, onClose, onSave, note (opcional para edição)
+ *
+ * Tecnologias: React, Framer Motion, react-icons, react-hot-toast
+ * =============================================================================
+ */
 // src/components/Notes/NoteModal.tsx
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - NoteContext (Context API)
+ * =============================================================================
+ *
+ * Arquivo: src/contexts/NoteContext.tsx
+ * Descrição: Contexto global para gerenciamento de notas (tradicionais).
+ *            Persiste notas no localStorage com suporte a CRUD completo,
+ *            pin/fixar, anexos (addAttachment/removeAttachment) e duplicação.
+ *            Diferente do GraphNotesContext que usa API, este usa localStorage.
+ *
+ * Hook de acesso: useNotes()
+ *
+ * Tecnologias: React Context API, localStorage, react-hot-toast
+ * =============================================================================
+ */
 // src/contexts/NoteContext.tsx
 import React, { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import type { Note, NoteAttachment } from '../types';

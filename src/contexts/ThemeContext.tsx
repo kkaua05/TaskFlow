@@ -1,3 +1,18 @@
+/*
+ * =============================================================================
+ * TaskFlow - ThemeContext (Context API)
+ * =============================================================================
+ *
+ * Arquivo: src/contexts/ThemeContext.tsx
+ * Descrição: Contexto global para gerenciamento do tema (claro/escuro).
+ *            Utiliza o hook useTheme para persistir a preferência e fornece
+ *            o tema atual e função toggleTheme para componentes filhos.
+ *
+ * Hook de acesso: useThemeContext()
+ *
+ * Tecnologias: React Context API
+ * =============================================================================
+ */
 import React, { createContext, useContext, ReactNode } from 'react';
 import { useTheme } from '../hooks/useTheme';
 

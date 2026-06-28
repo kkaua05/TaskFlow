@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - Charts Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/Charts/Charts.tsx
+ * Descrição: Componente de visualização de dados com 3 gráficos interativos:
+ *            - PieChart: Taxa de conclusão (Concluídas vs Pendentes)
+ *            - BarChart: Distribuição por prioridade
+ *            - LineChart: Produtividade nos últimos 7 dias
+ *            Usa Recharts para renderização responsiva dos gráficos.
+ *
+ * Props: tasks (array de Task para análise)
+ *
+ * Tecnologias: Recharts (PieChart, BarChart, LineChart), Framer Motion
+ * =============================================================================
+ */
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from 'recharts';
 import type { Task } from '../../types';

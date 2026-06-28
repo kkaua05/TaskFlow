@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - Sidebar Navigation Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/Sidebar/Sidebar.tsx
+ * Descrição: Barra de navegação lateral fixa com menu de páginas, logo,
+ *            e botão toggle. Suporta animações de entrada/saída com Framer
+ *            Motion e exibe indicador ativo na página atual. Contém 7 itens
+ *            de navegação: Dashboard, Concluídas, Analytics, Calendário,
+ *            Notes, Graph Notes e Configurações. Exibe versão e copyright.
+ *
+ * Props: currentPage, onPageChange, isOpen, onToggle
+ *
+ * Tecnologias: React, Framer Motion, react-icons (FontAwesome)
+ * =============================================================================
+ */
 import { motion } from 'framer-motion';
 import { 
   FaHome, 

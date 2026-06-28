@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - Header Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/Header/Header.tsx
+ * Descrição: Cabeçalho principal da aplicação com saudação dinâmica baseada
+ *            no horário (Bom dia/Boa tarde/Boa noite), data atual formatada
+ *            em português, campo de pesquisa de tarefas, botão toggle de tema
+ *            (claro/escuro) e botão "Nova Tarefa" para criar tarefas.
+ *
+ * Props: onNewTask, onSearch
+ * Dependências: useThemeContext (ThemeContext), date-fns (locale ptBR)
+ *
+ * Tecnologias: React, Framer Motion, react-icons, date-fns
+ * =============================================================================
+ */
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSearch, FaPlus, FaMoon, FaSun } from 'react-icons/fa';

@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - useLocalStorage Hook
+ * =============================================================================
+ *
+ * Arquivo: src/hooks/useLocalStorage.ts
+ * Descrição: Hook personalizado que gerencia estado persistido no
+ *            localStorage do navegador. Permite armazenar e recuperar
+ *            valores de qualquer tipo genérico (T) com fallback para
+ *            valor inicial caso a chave não exista.
+ *
+ * Uso: const [value, setValue] = useLocalStorage<T>('key', initialValue)
+ *
+ * Tecnologias: React (useState), Web Storage API (localStorage)
+ * =============================================================================
+ */
 import { useState } from 'react';
 
 export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T | ((val: T) => T)) => void] {

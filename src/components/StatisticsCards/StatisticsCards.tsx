@@ -1,3 +1,17 @@
+/*
+ * =============================================================================
+ * TaskFlow - StatisticsCards Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/StatisticsCards/StatisticsCards.tsx
+ * Descrição: Exibe cards de métricas com estatísticas das tarefas: Total,
+ *            Concluídas, Pendentes, Atrasadas e Produtividade (porcentagem).
+ *            Busca dados da API via taskApi.getStats() e anima a entrada
+ *            dos cards com Framer Motion com atraso escalonado.
+ *
+ * Tecnologias: React, Framer Motion, react-icons, API REST
+ * =============================================================================
+ */
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { FaTasks, FaCheckCircle, FaClock, FaExclamationTriangle, FaChartLine } from 'react-icons/fa';

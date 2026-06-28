@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - App Component (Root Component)
+ * =============================================================================
+ *
+ * Arquivo: src/App.tsx
+ * Descrição: Componente raiz da aplicação. Orquestra toda a árvore de
+ *            componentes, provedores de contexto (ThemeProvider, TaskProvider,
+ *            GraphNotesProvider) e o sistema de roteamento interno via estado.
+ *            Gerencia a página ativa e o estado da sidebar. Renderiza o Toaster
+ *            para notificações toast em toda a aplicação.
+ *
+ * Fluxo: App -> Providers -> Sidebar + Main Content (Páginas dinâmicas)
+ *
+ * Tecnologias: React 18, Context API, react-hot-toast, Framer Motion
+ * =============================================================================
+ */
 import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { ThemeProvider } from './contexts/ThemeContext';

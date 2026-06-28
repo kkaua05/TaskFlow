@@ -1,3 +1,21 @@
+/*
+ * =============================================================================
+ * TaskFlow - Tipos Globais (Legado)
+ * =============================================================================
+ *
+ * Arquivo: src/types.ts
+ * Descrição: (Legado) Define interfaces e constantes para Task, Goal,
+ *            UserSettings, Note e NoteAttachment. Este arquivo está sendo
+ *            gradualmente substituído pelo src/types/index.ts que possui
+ *            tipos mais atualizados e completos.
+ *
+ * Constantes: PRIORITIES (Baixa/Média/Alta/Urgente),
+ *             CATEGORIES (Trabalho/Pessoal/Estudo/Saúde/Outro),
+ *             NOTE_COLORS (8 cores para notas)
+ *
+ * Tecnologias: TypeScript
+ * =============================================================================
+ */
 // src/types.ts
 export interface Task {
   id: string;

@@ -1,3 +1,20 @@
+/*
+ * =============================================================================
+ * TaskFlow - TaskModal Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/TaskModal/TaskModal.tsx
+ * Descrição: Modal para criação e edição de tarefas. Formulário com campos
+ *            de título, descrição, prioridade, categoria, data limite, status
+ *            e cor. Usa AnimatePresence para animações de entrada/saída.
+ *            Suporta modo de criação e edição quando uma task existente é
+ *            passada como prop.
+ *
+ * Props: isOpen, onClose, onSave, task (opcional para edição)
+ *
+ * Tecnologias: React, Framer Motion, react-icons
+ * =============================================================================
+ */
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';

@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - NoteCard Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/Notes/NoteCard.tsx
+ * Descrição: Card de nota visual com cor de fundo personalizável, título,
+ *            preview do conteúdo, indicador de anexos e data de atualização.
+ *            Inclui ações: Fixar/Desafixar, Ver anexos, Duplicar e Excluir.
+ *            Usa Framer Motion para animações de layout e hover.
+ *
+ * Props: note, onEdit, onDelete, onDuplicate, onTogglePin, onOpenAttachments
+ *
+ * Tecnologias: React, Framer Motion, react-icons, date-fns
+ * =============================================================================
+ */
 // src/components/Notes/NoteCard.tsx
 import { motion } from 'framer-motion';
 import { FaTrash, FaCopy, FaThumbtack, FaPaperclip, FaFileImage, FaFilePdf, FaFileAlt } from 'react-icons/fa';

@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - useTheme Hook
+ * =============================================================================
+ *
+ * Arquivo: src/hooks/useTheme.ts
+ * Descrição: Hook personalizado que gerencia o tema da aplicação (claro/escuro).
+ *            Persiste a preferência no localStorage via useLocalStorage e
+ *            aplica/remove as classes CSS 'dark' e 'light' no elemento <html>.
+ *            Fornece função toggleTheme para alternar entre os temas.
+ *
+ * Dependências: useLocalStorage (hook interno)
+ *
+ * Tecnologias: React (useEffect), DOM API
+ * =============================================================================
+ */
 import { useEffect } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 

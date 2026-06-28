@@ -1,3 +1,19 @@
+/*
+ * =============================================================================
+ * TaskFlow - KanbanBoard Component
+ * =============================================================================
+ *
+ * Arquivo: src/components/KanbanBoard/KanbanBoard.tsx
+ * Descrição: Quadro Kanban com 3 colunas (Pendente, Em andamento, Concluído).
+ *            Suporta arrastar e soltar (drag & drop) tarefas entre colunas
+ *            usando @dnd-kit. Cada tarefa é renderizada como SortableTask
+ *            que wrappa o TaskCard com funcionalidade de arrastar.
+ *
+ * Props: tasks, onUpdateTask, onDeleteTask, onDuplicateTask, onCompleteTask, onEditTask
+ *
+ * Tecnologias: @dnd-kit/core, @dnd-kit/sortable, @dnd-kit/utilities, React
+ * =============================================================================
+ */
 import {
   DndContext,
   closestCenter,
