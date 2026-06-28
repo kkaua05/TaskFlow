@@ -12,6 +12,9 @@ lerna-debug.log*
 # Dependências
 node_modules
 backend/node_modules
+_backend/node_modules
+_backend/.env
+
 dist
 dist-ssr
 *.local
