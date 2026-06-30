@@ -118,8 +118,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentPage, onPageChange, isO
               style={{
                 width: '100%',
                 height: '100%',
-                objectFit: 'contain',
-                filter: 'brightness(0) invert(1)'
+                objectFit: 'contain'
               }}
             />
           </motion.div>
