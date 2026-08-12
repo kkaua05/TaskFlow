@@ -6,4 +6,3 @@ node_modules
 README.md
 screenshots
 .eslintrc*
-tsconfig*.json
