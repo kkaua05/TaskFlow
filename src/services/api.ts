@@ -1,6 +1,12 @@
+import { getVisitorId } from './visitorId';
+
 const API_URL = import.meta.env.DEV
   ? 'http://localhost:5000/api'
   : '/api';
+
+function authHeaders(extra?: Record<string, string>): Record<string, string> {
+  return { 'X-Visitor-Id': getVisitorId(), ...extra };
+}
 
 // Converte camelCase para snake_case para enviar ao backend
 function toSnakeCase(obj: any): any {
@@ -59,7 +65,7 @@ function fromBackend(obj: any): any {
 export const taskApi = {
   getAll: async () => {
     try {
-      const response = await fetch(`${API_URL}/tasks`);
+      const response = await fetch(`${API_URL}/tasks`, { headers: authHeaders() });
       const data = await response.json();
       return data.success ? data.tasks.map(fromBackend) : [];
     } catch {
@@ -70,7 +76,7 @@ export const taskApi = {
     try {
       const response = await fetch(`${API_URL}/tasks`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(toSnakeCase(task))
       });
       const data = await response.json();
@@ -83,7 +89,7 @@ export const taskApi = {
     try {
       const response = await fetch(`${API_URL}/tasks/${id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(toSnakeCase(task))
       });
       const data = await response.json();
@@ -94,7 +100,7 @@ export const taskApi = {
   },
   delete: async (id: string) => {
     try {
-      const response = await fetch(`${API_URL}/tasks/${id}`, { method: 'DELETE' });
+      const response = await fetch(`${API_URL}/tasks/${id}`, { method: 'DELETE', headers: authHeaders() });
       const data = await response.json();
       return data.success;
     } catch {
@@ -103,7 +109,7 @@ export const taskApi = {
   },
   getStats: async () => {
     try {
-      const response = await fetch(`${API_URL}/stats`);
+      const response = await fetch(`${API_URL}/stats`, { headers: authHeaders() });
       const data = await response.json();
       return data.success ? data.stats : null;
     } catch {
@@ -115,7 +121,7 @@ export const taskApi = {
 export const graphNotesApi = {
   getAll: async () => {
     try {
-      const response = await fetch(`${API_URL}/graph-notes`);
+      const response = await fetch(`${API_URL}/graph-notes`, { headers: authHeaders() });
       const data = await response.json();
       return data.success ? data.notes.map(fromBackend) : [];
     } catch {
@@ -126,7 +132,7 @@ export const graphNotesApi = {
     try {
       const response = await fetch(`${API_URL}/graph-notes`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(toSnakeCase(note))
       });
       const data = await response.json();
@@ -139,7 +145,7 @@ export const graphNotesApi = {
     try {
       const response = await fetch(`${API_URL}/graph-notes/${id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: authHeaders({ 'Content-Type': 'application/json' }),
         body: JSON.stringify(toSnakeCase(note))
       });
       const data = await response.json();
@@ -150,7 +156,7 @@ export const graphNotesApi = {
   },
   delete: async (id: string) => {
     try {
-      const response = await fetch(`${API_URL}/graph-notes/${id}`, { method: 'DELETE' });
+      const response = await fetch(`${API_URL}/graph-notes/${id}`, { method: 'DELETE', headers: authHeaders() });
       const data = await response.json();
       return data.success;
     } catch {
