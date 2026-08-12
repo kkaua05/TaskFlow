@@ -242,7 +242,6 @@ export const GraphNotes: React.FC = () => {
     const drawCurvedLine = (source: any, target: any) => {
       const dx = target.x - source.x;
       const dy = target.y - source.y;
-      const dr = Math.sqrt(dx * dx + dy * dy);
       const curvature = 0.5;
       const offsetX = dy * curvature;
       const offsetY = -dx * curvature;

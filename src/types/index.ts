@@ -55,3 +55,23 @@ export const CATEGORIES = [
   { id: 'health', name: 'Saúde', color: '#F59E0B', icon: 'FaHeartbeat' },
   { id: 'projects', name: 'Projetos', color: '#06B6D4', icon: 'FaProjectDiagram' }
 ];
+
+export interface Note {
+  id: string;
+  title: string;
+  content: string;
+  color: string;
+  attachments: NoteAttachment[];
+  createdAt: Date;
+  updatedAt: Date;
+  isPinned: boolean;
+  tags: string[];
+}
+
+export interface NoteAttachment {
+  id: string;
+  name: string;
+  type: 'image' | 'pdf' | 'document' | 'other';
+  url: string;
+  size: number;
+}

@@ -19,7 +19,6 @@ import {
   FaStar,
   FaRegStar
 } from 'react-icons/fa';
-// @ts-ignore - react-color não tem tipos
 import { ChromePicker } from 'react-color';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';

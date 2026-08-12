@@ -58,67 +58,103 @@ function fromBackend(obj: any): any {
 
 export const taskApi = {
   getAll: async () => {
-    const response = await fetch(`${API_URL}/tasks`);
-    const data = await response.json();
-    return data.success ? data.tasks.map(fromBackend) : [];
+    try {
+      const response = await fetch(`${API_URL}/tasks`);
+      const data = await response.json();
+      return data.success ? data.tasks.map(fromBackend) : [];
+    } catch {
+      return [];
+    }
   },
   create: async (task: any) => {
-    const response = await fetch(`${API_URL}/tasks`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(toSnakeCase(task))
-    });
-    const data = await response.json();
-    return data.success ? fromBackend(data.task) : null;
+    try {
+      const response = await fetch(`${API_URL}/tasks`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(toSnakeCase(task))
+      });
+      const data = await response.json();
+      return data.success ? fromBackend(data.task) : null;
+    } catch {
+      return null;
+    }
   },
   update: async (id: string, task: any) => {
-    const response = await fetch(`${API_URL}/tasks/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(toSnakeCase(task))
-    });
-    const data = await response.json();
-    return data.success ? fromBackend(data.task) : null;
+    try {
+      const response = await fetch(`${API_URL}/tasks/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(toSnakeCase(task))
+      });
+      const data = await response.json();
+      return data.success ? fromBackend(data.task) : null;
+    } catch {
+      return null;
+    }
   },
   delete: async (id: string) => {
-    const response = await fetch(`${API_URL}/tasks/${id}`, { method: 'DELETE' });
-    const data = await response.json();
-    return data.success;
+    try {
+      const response = await fetch(`${API_URL}/tasks/${id}`, { method: 'DELETE' });
+      const data = await response.json();
+      return data.success;
+    } catch {
+      return false;
+    }
   },
   getStats: async () => {
-    const response = await fetch(`${API_URL}/stats`);
-    const data = await response.json();
-    return data.success ? data.stats : null;
+    try {
+      const response = await fetch(`${API_URL}/stats`);
+      const data = await response.json();
+      return data.success ? data.stats : null;
+    } catch {
+      return null;
+    }
   }
 };
 
 export const graphNotesApi = {
   getAll: async () => {
-    const response = await fetch(`${API_URL}/graph-notes`);
-    const data = await response.json();
-    return data.success ? data.notes.map(fromBackend) : [];
+    try {
+      const response = await fetch(`${API_URL}/graph-notes`);
+      const data = await response.json();
+      return data.success ? data.notes.map(fromBackend) : [];
+    } catch {
+      return [];
+    }
   },
   create: async (note: any) => {
-    const response = await fetch(`${API_URL}/graph-notes`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(toSnakeCase(note))
-    });
-    const data = await response.json();
-    return data.success ? fromBackend(data.note) : null;
+    try {
+      const response = await fetch(`${API_URL}/graph-notes`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(toSnakeCase(note))
+      });
+      const data = await response.json();
+      return data.success ? fromBackend(data.note) : null;
+    } catch {
+      return null;
+    }
   },
   update: async (id: string, note: any) => {
-    const response = await fetch(`${API_URL}/graph-notes/${id}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(toSnakeCase(note))
-    });
-    const data = await response.json();
-    return data.success ? fromBackend(data.note) : null;
+    try {
+      const response = await fetch(`${API_URL}/graph-notes/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(toSnakeCase(note))
+      });
+      const data = await response.json();
+      return data.success ? fromBackend(data.note) : null;
+    } catch {
+      return null;
+    }
   },
   delete: async (id: string) => {
-    const response = await fetch(`${API_URL}/graph-notes/${id}`, { method: 'DELETE' });
-    const data = await response.json();
-    return data.success;
+    try {
+      const response = await fetch(`${API_URL}/graph-notes/${id}`, { method: 'DELETE' });
+      const data = await response.json();
+      return data.success;
+    } catch {
+      return false;
+    }
   }
 };

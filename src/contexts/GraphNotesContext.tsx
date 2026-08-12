@@ -47,6 +47,8 @@ export const GraphNotesProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     if (newNote) {
       setNotes([newNote, ...notes]);
       toast.success('Nota criada!');
+    } else {
+      toast.error('Não foi possível criar a nota. Tente novamente.');
     }
   };
 
@@ -55,6 +57,8 @@ export const GraphNotesProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     if (updated) {
       setNotes(notes.map(n => n.id === id ? { ...n, ...updated } : n));
       toast.success('Nota atualizada!');
+    } else {
+      toast.error('Não foi possível atualizar a nota. Tente novamente.');
     }
   };
 
@@ -63,6 +67,8 @@ export const GraphNotesProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     if (success) {
       setNotes(notes.filter(n => n.id !== id));
       toast.success('Nota removida!');
+    } else {
+      toast.error('Não foi possível remover a nota. Tente novamente.');
     }
   };
 

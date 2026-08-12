@@ -56,6 +56,8 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (newTask) {
       setTasks([newTask, ...tasks]);
       toast.success('Tarefa criada!');
+    } else {
+      toast.error('Não foi possível criar a tarefa. Tente novamente.');
     }
   };
 
@@ -64,6 +66,8 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (updated) {
       setTasks(tasks.map(t => t.id === id ? { ...t, ...updated } : t));
       toast.success('Tarefa atualizada!');
+    } else {
+      toast.error('Não foi possível atualizar a tarefa. Tente novamente.');
     }
   };
 
@@ -72,6 +76,8 @@ export const TaskProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (success) {
       setTasks(tasks.filter(t => t.id !== id));
       toast.success('Tarefa removida!');
+    } else {
+      toast.error('Não foi possível remover a tarefa. Tente novamente.');
     }
   };
 

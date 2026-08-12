@@ -13,7 +13,8 @@
  * Tecnologias: React Context API
  * =============================================================================
  */
-import React, { createContext, useContext, ReactNode } from 'react';
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
 import { useTheme } from '../hooks/useTheme';
 
 interface ThemeContextType {
